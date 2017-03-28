@@ -185,7 +185,7 @@
                          <th colspan="2">Pemeriksaan Fisik</th>
                          <th colspan="2">Diagnosa</th>
                          <th>Tindakan</th>
-                         <th>Nama</th>
+                         <th>Dokter</th>
                       </tr>
                      </thead>
                      <tbody>
@@ -208,26 +208,29 @@
                                                 //}
                                         //}
                                     ?>   
-                           <tr id="product_<?php echo $row['id_produk']?>" style="display:none">
+                           <tr id="tgl_<?php echo $row['tanggal']?>" style="display:none">
+                             <input type="date" class="form-control" name="produk[<?php echo $row['id_produk']?>]">
 						                 <td>
-                                <a href="<?php echo $row['nama_produk'] ?>.html"><img src= "<?php echo $row['gambar_produk'] ?>" >
+                                <a href="<?php echo $row['anamnesa'] ?>.html">
                                 </a>
                              </td>
                              <td>
-														 		<a href="<?php echo $row['nama_produk'] ?>.html"><?php 
-                                                echo $row['nama_produk'];?>
+														 		<a href="<?php echo $row['fisik'] ?>.html"><?php 
+                                                echo $row['fisik'];?>
 																</a>
                              </td>
-                             <td class="unit_number">
+                             <td class="diagnosa">
                                 <input type="number" min="1" value="0" class="form-control" name="produk[<?php echo $row['id_produk']?>]">
                              </td>
-                             <td class="unit_price">
+                             <td class="tindakan">
                                             <?php 
                                                 echo $row['harga_produk'];
                                             ?>
                              </td>
-                          	 <td class="subtotal_price">0</td>
-                            		<td class='deleterow'>
+                          	 <td class="dokter">
+                               <input type="text" class="form-control" name="dokter[<?php echo $row['tanggal']?>]">
+                             </td>
+                            		<td class='addrow'>
                                    <i class='fa fa-trash-o'></td> 
                             </tr>
                                         <?php }} ?>
