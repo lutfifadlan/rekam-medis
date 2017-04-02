@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 use View;
+use DB;
 
 class Controller extends BaseController
 {
@@ -59,5 +61,9 @@ class Controller extends BaseController
 	public function createPatient(Request $request)
 	{
 		echo $request;
+		$name = $request->input('name');
+		DB::table('patients')->insert(
+		    ['name' => $name ]
+		);
 	}
 }

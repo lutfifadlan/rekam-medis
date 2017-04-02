@@ -47,10 +47,6 @@ Route::get('patients', function()
 	}
 });
 
-/*Route::post('patients', function (Request $request) {
-	
-});*/
-
 Route::get('patients_form', function()
 {
 	if (Auth::check()) {
