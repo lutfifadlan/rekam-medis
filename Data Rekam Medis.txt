@@ -1,0 +1,23 @@
+1. Nomor Pasien -> String
+2. Riwayat Alergi -> String
+3. Asuransi -> String
+4. Nama -> String
+5. Orang Tua -> String
+6. Umur -> Number
+7. Tanggal Lahir -> Date
+8. Suami/Istri -> String
+9. Jenis Kelamin -> Enum<String>
+10. Pendidikan -> Enum<String>
+11. Agama -> Enum<String> 
+12. Pekerjaan -> String
+13. Perkawinan -> Enum<String>
+14. Alamat -> String
+15. No. Telepon -> Number
+16. Berat Badan -> Number (kg)
+17. Tinggi Badan -> Number (cm)
+18. Tanggal -> Date
+19. Anamnesa -> String
+20. Pemeriksaan Fisik -> String
+21. Diagnosa -> String
+22. Tindakan -> String
+23. Dokter -> String / Enum<String>
