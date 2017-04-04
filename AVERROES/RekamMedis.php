@@ -36,17 +36,35 @@
 </head>
 
 <body>
-    
-	<div class="col-md-12" id="basket">
+  <div class="col-md-12" id="basket">
     <a href="#home"><img src="AVERROES LOGO TEXT.png" width = "150" height = "50"></a>
   </div>
-
 	<div class="col-md-12" id="basket">
       <div class="box">
           <form action="simpan_pembelian.php" method="post">
-              <h1>Shopping Cart</h1>
+              <h1 style="text-align: center">Data Rekam Medis</h1>
               <div class="table-responsive">
                 <div class="content">
+                   <div class="row">
+                      <div class="col-sm-4">
+                      	<div class="form-group">
+                            <label for="nomor">Nomor Pasien</label>
+                            <input type="text" class="form-control namecookie" name="nomor" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                      	<div class="form-group">
+                            <label for="alergi">Riwayat Alergi</label>
+                            <input type="text" class="form-control namecookie" name="alergi" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                      	<div class="form-group">
+                            <label for="asuransi">Asuransi</label>
+                            <input type="text" class="form-control namecookie" name="asuransi" required>
+                        </div>
+                      </div>
+                    </div>
                    <div class="row">
                       <div class="col-sm-6">
                       	<div class="form-group">
@@ -54,41 +72,129 @@
                             <input type="text" class="form-control namecookie" name="nama" required>
                         </div>
                       </div>
+                      <div class="col-sm-6">
+                      	<div class="form-group">
+                            <label for="ortu">Orang Tua</label>
+                            <input type="text" class="form-control namecookie" name="ortu" required>
+                        </div>
+                      </div>
+                    </div>
+                   <div class="row">
+                      <div class="col-sm-2">
+                      	<div class="form-group">
+                            <label for="Umur">Umur</label>
+                            <input type="text" class="form-control namecookie" name="Umur" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                      	<div class="form-group">
+                            <label for="TL">Tanggal Lahir</label>
+                            <input type="text" class="form-control namecookie" name="TL" required>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                      	<div class="form-group">
+                            <label for="pasangan">Suami/Istri</label>
+                            <input type="text" class="form-control namecookie" name="pasangan" required>
+                        </div>
+                      </div>
                     </div>
                     <!-- /.row -->
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="alamat">Address</label>
-                          <input type="text" class="form-control namecookie" name="alamat" required>
+                          <label for="kelamin">Jenis Kelamin</label>
+                          <input type="text" class="form-control namecookie" name="kelamin" required>
                         </div>
                       </div>
-                     </div>
-                     <div class="row">
                        <div class="col-sm-6">
                         	<div class="form-group">
-                            <label for="street">Phone Number</label>
-                            <input type="text" class="form-control namecookie" name="no_hp" required>
+                            <label for="sangdik">Pendidikan</label>
+                            <input type="text" class="form-control namecookie" name="sangdik" required>
                           </div>
                         </div>
+                     </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="agama">Agama</label>
+                          <input type="text" class="form-control namecookie" name="agama" required>
+                        </div>
                       </div>
+                       <div class="col-sm-6">
+                        	<div class="form-group">
+                            <label for="sangker">Pekerjaan</label>
+                            <input type="text" class="form-control namecookie" name="sangker" required>
+                          </div>
+                        </div>
                     </div>
-                    <table class="table" id="countit">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="kawin">Perkawinan</label>
+                          <input type="text" class="form-control namecookie" name="kawin" required>
+                        </div>
+                      </div>
+                       <div class="col-sm-6">
+                        	<div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <input type="text" class="form-control namecookie" name="alamat" required>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="didik">Pendidikan</label>
+                          <input type="text" class="form-control namecookie" name="didik" required>
+                        </div>
+                      </div>
+                       <div class="col-sm-6">
+                        	<div class="form-group">
+                            <label for="telp">No. Telpon</label>
+                            <input type="text" class="form-control namecookie" name="telp" required>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="kerja">Pekerjaan</label>
+                          <input type="text" class="form-control namecookie" name="kerja" required>
+                        </div>
+                      </div>
+                       <div class="col-sm-3">
+                        	<div class="form-group">
+                            <label for="bb">Berat Badan</label>
+                            <input type="text" class="form-control namecookie" name="bb" required>
+                          </div>
+                        </div>
+                       <div class="col-sm-3">
+                        	<div class="form-group">
+                            <label for="tb">Tinggi Badan</label>
+                            <input type="text" class="form-control namecookie" name="tb" required>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                    <table class="table" id="rekam">
                     <thead>
                       <tr>
-                         <th colspan="2">Product</th>
-                         <th>Quantity</th>
-                         <th>Unit price</th>
-                         <th colspan="2">Total</th>
+                         <th>Tanggal</th>
+                         <th>Anamnesa</th>
+                         <th colspan="2">Pemeriksaan Fisik</th>
+                         <th colspan="2">Diagnosa</th>
+                         <th>Tindakan</th>
+                         <th>Dokter</th>
                       </tr>
                      </thead>
                      <tbody>
                                     <?php
                                         // Create connection
                                         $servername = "localhost";
-                                        $username = "kainkady_root"; // "root" "kainkady_root"
-                                        $password = "494032"; // "" "494032"
-                                        $dbname = "kainkady_kainka"; //"kainka" "kainkady_kainka"
+                                        $username = "localhost"; // "root" "kainkady_root"
+                                        $password = ""; // "" "494032"
+                                        $dbname = "test"; //"kainka" "kainkady_kainka"
                                         $conn = new mysqli($servername, $username, $password, $dbname);
                                         // Check connection
                                         if ($conn->connect_error) {
@@ -102,43 +208,57 @@
                                                 //}
                                         //}
                                     ?>   
-                           <tr id="product_<?php echo $row['id_produk']?>" style="display:none">
-						                 <td>
-                                <a href="<?php echo $row['nama_produk'] ?>.html"><img src= "<?php echo $row['gambar_produk'] ?>" >
-                                </a>
+                           <tr id="tgl_<?php echo $row['tanggal']?>" style="display:none">
+                             <td>
+                               <?php echo $row['tanggal'] ?>
                              </td>
                              <td>
-														 		<a href="<?php echo $row['nama_produk'] ?>.html"><?php 
-                                                echo $row['nama_produk'];?>
-																</a>
+                                <?php echo $row['anamnesa'] ?>
                              </td>
-                             <td class="unit_number">
-                                <input type="number" min="1" value="0" class="form-control" name="produk[<?php echo $row['id_produk']?>]">
+                             <td colspan="2">
+														 		<?php echo $row['fisik'] ?>
                              </td>
-                             <td class="unit_price">
+                             <td class="diagnosa" colspan="2">
+                                <?php echo $row['diagnosa'] ?>
+                             </td>
+                             <td class="tindakan">
                                             <?php 
-                                                echo $row['harga_produk'];
+                                                echo $row['tindakan'];
                                             ?>
                              </td>
-                          	 <td class="subtotal_price">0</td>
-                            		<td class='deleterow'>
-                                   <i class='fa fa-trash-o'></td> 
+                          	 <td class="dokter">
+                               <?php echo $row['dokter'] ?>
+                             </td>
+                            </tr>
+                            <tr id="tgl_<?php echo $row['tanggal']?>" style="display:none">
+                             <td>
+                               <input type="date" class="form-control" name="tanggal">
+						                 </td>
+                             <td>
+                                <input type="text" class="form-control" name="anamnesa">
+						                 </td>
+                             <td colspan="2">
+                                <input type="text" class="form-control" name="fisik">
+                             </td>
+                             <td class="diagnosa" colspan="2">
+                                <input type="text" class="form-control" name="diagnosa">
+                             </td>
+                             <td class="tindakan">
+                                <input type="text" class="form-control" name="tindakan">
+                             </td>
+                          	 <td class="dokter">
+                               <input type="text" class="form-control" name="dokter">
+                             </td>
                             </tr>
                                         <?php }} ?>
                            </tbody>
-                           <tfoot>
-                             <tr>
-                               <th colspan="5">Total</th>
-                               <th colspan="2" class="total_price">0</th>
-                             </tr>
-                            </tfoot>
                           </table>
                        </div>
                             <!-- /.table-responsive -->
                        <div class="box-footer">
                           <div class="pull-right">
-                             <a href="catalog.html" class="btn btn-primary">Continue Shopping</a>
-                             <input type="submit" value="Check Out" class="co-button btn btn-primary"/>
+                             <!--a href="catalog.html" class="btn btn-primary">Continue Shopping</a-->
+                             <input type="submit" value="Save Data" class="co-button btn btn-primary"/>
                            </div>
                         </div>
                      </form>
