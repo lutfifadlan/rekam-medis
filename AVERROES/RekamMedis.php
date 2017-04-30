@@ -41,7 +41,7 @@
   </div>
 	<div class="col-md-12" id="basket">
       <div class="box">
-          <form action="simpan_pembelian.php" method="post">
+          <form action="simpan_rekam.php" method="post">
               <h1 style="text-align: center">Data Rekam Medis</h1>
               <div class="table-responsive">
                 <div class="content">
@@ -89,7 +89,7 @@
                       <div class="col-sm-4">
                       	<div class="form-group">
                             <label for="TL">Tanggal Lahir</label>
-                            <input type="text" class="form-control namecookie" name="TL" required>
+                            <input type="date" class="form-control namecookie" name="TL" required>
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -166,13 +166,13 @@
                        <div class="col-sm-3">
                         	<div class="form-group">
                             <label for="bb">Berat Badan</label>
-                            <input type="text" class="form-control namecookie" name="bb" required>
+                            <input type="number_format" class="form-control namecookie" name="bb" required>
                           </div>
                         </div>
                        <div class="col-sm-3">
                         	<div class="form-group">
                             <label for="tb">Tinggi Badan</label>
-                            <input type="text" class="form-control namecookie" name="tb" required>
+                            <input type="number_format" class="form-control namecookie" name="tb" required>
                           </div>
                         </div>
                     </div>
@@ -257,7 +257,6 @@
                             <!-- /.table-responsive -->
                        <div class="box-footer">
                           <div class="pull-right">
-                             <!--a href="catalog.html" class="btn btn-primary">Continue Shopping</a-->
                              <input type="submit" value="Save Data" class="co-button btn btn-primary"/>
                            </div>
                         </div>
