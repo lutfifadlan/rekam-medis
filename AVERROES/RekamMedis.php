@@ -204,39 +204,38 @@
                                     ?>   
                            
                             <tr id="tgl_<?php echo $row['tanggal']?>" style="display:none">
-                             <td>
+                             <td colspan="1">
                                <input type="date" class="form-control" name="tanggal">
 						                 </td>
-                             <td>
+                             <td colspan="2">
                                 <input type="text" class="form-control" name="anamnesa">
 						                 </td>
-                             <td colspan="2">
+                             <td colspan="3">
                                 <input type="text" class="form-control" name="fisik">
                              </td>
-                             <td class="diagnosa" colspan="2">
+                             <td colspan="3">
                                 <input type="text" class="form-control" name="diagnosa">
                              </td>
-                             <td class="tindakan">
+                             <td colspan="2">
                                 <input type="text" class="form-control" name="tindakan">
                              </td>
-                          	 <td class="dokter">
+                          	 <td colspan="1">
                                <input type="text" class="form-control" name="dokter">
                              </td>
 
-                            </tr>  
-                            <tr id="tgl_<?php echo $row['tanggal']?>" style="display:none">
-                              <div class="col-sm-1">
+                            </tr>      
+                           </tbody>
+                          </table>
+                          <div class="col-sm-1">
                                 <div class="form-group">
                                   <input type="date" class="form-control" name="tanggal" required>
                                 </div>
                               </div>
                               
                               <div class="col-sm-2">
-                                <div class="form-group">
-                                  <input type="text" class="form-control" name="anamnesa" required>
-                                </div>
+                                <input type="text" class="form-control" name="anamnesa" required>
                               </div>
-                              <div class="col-sm-2">
+                              <div class="col-sm-3">
                                 <div class="form-group">
                                   <input type="text" class="form-control" name="fisik" required>
                                 </div>
@@ -256,10 +255,6 @@
                                   <input type="text" class="form-control" name="dokter" required>
                                 </div>
                               </div>
-
-                            </tr>        <?php //}} ?>
-                           </tbody>
-                          </table>
                        </div>
                             <!-- /.table-responsive -->
                        <div class="box-footer">
