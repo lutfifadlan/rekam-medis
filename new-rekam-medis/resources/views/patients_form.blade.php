@@ -1,3 +1,7 @@
+<?php
+  use App\Patient;
+?>
+
 <head>
 	<title>Patient Form</title>
 	<meta charset="utf-8">
@@ -45,19 +49,27 @@
                       <div class="col-sm-4">
                       	<div class="form-group">
                             <label for="patient_number">Nomor Pasien</label>
-                            <input type="text" class="form-control namecookie" name="patient_number" required>
+                            <?php
+                              if (Patient::all() -> last() === null && $_POST['id'] === null) {
+                                echo 0;
+                              } else if ($_POST['id'] !== null) {
+                                echo $_POST['id'];
+                              } else {
+                                echo Patient::all() -> last() -> value('id');
+                              }
+                            ?>
                         </div>
                       </div>
                       <div class="col-sm-4">
                       	<div class="form-group">
                             <label for="allergy_history">Riwayat Alergi</label>
-                            <input type="text" class="form-control namecookie" name="allergy_history" required>
+                            <input type="text" class="form-control namecookie" name="allergy_history">
                         </div>
                       </div>
                       <div class="col-sm-4">
                       	<div class="form-group">
                             <label for="insurance">Asuransi</label>
-                            <input type="text" class="form-control namecookie" name="insurance" required>
+                            <input type="text" class="form-control namecookie" name="insurance">
                         </div>
                       </div>
                     </div>
@@ -71,7 +83,7 @@
                       <div class="col-sm-6">
                       	<div class="form-group">
                             <label for="parents">Orang Tua</label>
-                            <input type="text" class="form-control namecookie" name="parents" required>
+                            <input type="text" class="form-control namecookie" name="parents">
                         </div>
                       </div>
                     </div>
@@ -79,7 +91,7 @@
                       <div class="col-sm-2">
                       	<div class="form-group">
                             <label for="age">Umur</label>
-                            <input type="text" class="form-control namecookie" name="age" required>
+                            <input type="number" class="form-control namecookie" name="age" required>
                         </div>
                       </div>
                       <div class="col-sm-4">
@@ -91,7 +103,7 @@
                       <div class="col-sm-6">
                       	<div class="form-group">
                             <label for="partner">Suami/Istri</label>
-                            <input type="text" class="form-control namecookie" name="partner" required>
+                            <input type="text" class="form-control namecookie" name="partner">
                         </div>
                       </div>
                     </div>
@@ -101,12 +113,21 @@
                         <div class="form-group">
                           <label for="gender">Jenis Kelamin</label>
                           <input type="text" class="form-control namecookie" name="gender" required>
+              <!--             <div class="form-group">
+                            <form id ="gender" method="post">
+                              <select name="gender">
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                                <option value="Lainnya">Lainnya</option>
+                              </select> 
+                            </form>
+                          </div> -->
                         </div>
                       </div>
                        <div class="col-sm-6">
                         	<div class="form-group">
                             <label for="education">Pendidikan</label>
-                            <input type="text" class="form-control namecookie" name="education" required>
+                            <input type="text" class="form-control namecookie" name="education">
                           </div>
                         </div>
                      </div>
@@ -114,13 +135,13 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="religion">Agama</label>
-                          <input type="text" class="form-control namecookie" name="religion" required>
+                          <input type="text" class="form-control namecookie" name="religion">
                         </div>
                       </div>
                        <div class="col-sm-6">
                         	<div class="form-group">
                             <label for="job">Pekerjaan</label>
-                            <input type="text" class="form-control namecookie" name="job" required>
+                            <input type="text" class="form-control namecookie" name="job">
                           </div>
                         </div>
                     </div>
@@ -128,7 +149,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="marriage">Perkawinan</label>
-                          <input type="text" class="form-control namecookie" name="marriage" required>
+                          <input type="text" class="form-control namecookie" name="marriage">
                         </div>
                       </div>
                        <div class="col-sm-6">
@@ -142,7 +163,7 @@
                        <div class="col-sm-6">
                         	<div class="form-group">
                             <label for="phone_number">No. Telepon</label>
-                            <input type="text" class="form-control namecookie" name="phone_number" required>
+                            <input type="number" class="form-control namecookie" name="phone_number" required>
                           </div>
                         </div>
                     </div>
@@ -150,13 +171,13 @@
                        <div class="col-sm-3">
                         	<div class="form-group">
                             <label for="weight">Berat Badan</label>
-                            <input type="number_format" class="form-control namecookie" name="weight" required>
+                            <input type="number" class="form-control namecookie" name="weight" required>
                           </div>
                         </div>
                        <div class="col-sm-3">
                         	<div class="form-group">
                             <label for="height">Tinggi Badan</label>
-                            <input type="number_format" class="form-control namecookie" name="height" required>
+                            <input type="number" class="form-control namecookie" name="height" required>
                           </div>
                         </div>
                     </div>
@@ -174,22 +195,22 @@
 						</tr>
                     	<tr>
                          	<td>
-                               <input type="date" class="form-control" name="date">
+                               <input type="date" class="form-control" name="date" required>
 		                 	</td>
                          	<td>
-                                <input type="text" class="form-control" name="anamnesa">
+                                <input type="text" class="form-control" name="anamnesa" required>
 	                 		</td>
                      		<td>
-                                <input type="text" class="form-control" name="physical_examination">
+                                <input type="text" class="form-control" name="physical_examination" required>
                      		</td>
                      		<td>
-                                <input type="text" class="form-control" name="diagnosis">
+                                <input type="text" class="form-control" name="diagnosis" required>
                      		</td>
                      		<td>
-                                <input type="text" class="form-control" name="act">
+                                <input type="text" class="form-control" name="act" required>
                      		</td>
                   	 		<td>
-                               <input type="text" class="form-control" name="doctor">
+                               <input type="text" class="form-control" name="doctor" required>
                      		</td>
                         </tr>     
                   	</table>
