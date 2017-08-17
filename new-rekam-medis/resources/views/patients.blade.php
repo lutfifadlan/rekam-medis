@@ -17,6 +17,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
 		<script src="assets/js/ie-emulation-modes-warning.js"></script>
 		<script src="assets/js/smoothscroll.js"></script>
 	
@@ -31,57 +32,63 @@
 </head>
 
 <body>
-  	<div class="col-md-12" id="basket">
-    	<img src="img/AVERROES LOGO TEXT.png" width = "150" height = "50">
-  	</div>
+	<div class="col-md-12" id="basket">
+  	<img src="img/AVERROES LOGO TEXT.png" width = "150" height = "50">
+	</div>
 	<div class="col-md-12">
-      	<div class="box">
+  	<div class="box">
 			<h1 style="text-align: center">Database Pasien</h1>
-          	<div class="table-responsive">
-             	<table class="table" id="database">
-                    <thead>
+    	<div class="table-responsive">
+       	<table class="table table-hover" id="database">
+          <thead>
 						<tr>
 							<th>Nomor Pasien</th>
 							<th>Nama Pasien</th>
 							<th>Tanggal Lahir</th>
 							<th>Alamat</th>
 						</tr>
-             		</thead>
-                 	<tbody>
-                 	@foreach($patients as $patient)
-                       	<tr>
-                         	<td>
-                            	{{$patient->patient_number}}
-                         	</td>
-                         	<td>
-                         		{{$patient->name}}
-                         	</td>
-                         	<td>
-                            	{{$patient->birthday}}
-                         	</td>
-                         	<td>
-                            	{{$patient->address}}
-                         	</td>
-                        </tr>
-                    @endforeach
-               		</tbody>
-              	</table>
-           	</div>
-                <!-- /.table-responsive -->
-			<div class="box-footer">
-			  	<div class="pull-right">
-					<!--a href="catalog.html" class="btn btn-primary">Continue Shopping</a-->
-					<!--input type="submit" value="Open Data" class="co-button btn btn-primary"/-->
+       		</thead>
+         	<tbody>
+            {{ Form::open(array('url' => 'patients_form')) }}
+           	@foreach($patients as $patient)
+             	<tr class="clickable-row">
+               	<td>
+                  {{$patient->id}}
+               	</td>
+               	<td>
+               		{{$patient->name}}
+               	</td>
+               	<td>
+                	{{$patient->birthday}}
+               	</td>
+               	<td>
+                	{{$patient->address}}
+               	</td>
+              </tr>
+            {{ Form::submit('') }}
+            @endforeach
+       		</tbody>
+      	</table>
+      </div>
+		  <div class="box-footer">
+		  	<div class="pull-right">
 					<a href="{{ URL::to('logout') }}" class="btn btn-primary">Logout</a>
 					<a href="{{ URL::to('patients_form') }}" class="btn btn-primary"}}"> Add Patient </a>
-			   	</div>
+		   	</div>
 			</div>
-        <!-- /.box -->
-    	</div>
   	</div>
-	<!-- FOOTER -->
+	</div>
 </body>
 
 @if(Session::has('message'))
 <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 @endif
+
+
+<script type="text/javascript">
+$(function() {
+  $('div.box').on("click", "table.table-hover", function() {
+    window.location = $(this).data("url");
+  });
+});
+</script>
