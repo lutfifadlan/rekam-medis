@@ -36,7 +36,7 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO `rekam` (nomor, alergi, asuransi, nama, orang_tua, Tanggal_Lahir, pasangan, jenis_kelamin, Pendidikan_Pasangan, agama, Pekerjaan_Pasangan, perkawinan, alamat, pendidikan, nomor_telpon, pekerjaan, berat_badan, tinggi_badan)
 VALUES ('$nomor', '$alergi', '$asuransi', '$nama', '$orang_tua', '$Tanggal_Lahir', '$pasangan', '$jenis_kelamin', '$Pendidikan_Pasangan', '$agama', '$Pekerjaan_Pasangan', '$perkawinan', '$alamat', '$pendidikan', '$nomor_telpon', '$pekerjaan', '$berat_badan', '$tinggi_badan')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) == TRUE) {
     echo "New record " . $conn->insert_id . " created successfully";
    	/**$id_order = $conn->insert_id;
     foreach ($produk as $id_produk => $jumlah) {
