@@ -36,14 +36,14 @@
 
 <body>
  	<div class="col-md-12">
-            <a href="patients.blade.php"><img src="../../public/img/AVERROES LOGO TEXT.png" width = "150" height = "50"></a>
+            <img src="../../public/img/AVERROES LOGO TEXT.png" width = "150" height = "50">
       </div>
     <div class="login">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        {{ Form::open(array('url' => 'login')) }}
+        <!--{{ Form::open(array('url' => 'login')) }}-->
         <h1 style="color:white">Login</h1>
 
-        <p>
+        <!--p>
             {{ $errors->first('name') }}
             {{ $errors->first('password') }}
         </p>
@@ -59,6 +59,7 @@
         </p>
 
         <p> {{ Form::submit('Login') }} </p>
-        {{ Form::close() }}       
+        {{ Form::close() }}-->
+        
     </div>
 </body>
